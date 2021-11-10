@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="fragment.HomeFragment"
+    >
+
+  <data>
+    <import type="android.view.View" />
+    <variable
+        name="viewModel"
+        type="com.bebridge.android_template.viewModel.AddFarmViewModel"
+        />
+  </data>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      >
+
+    <RelativeLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        >
+
+      <androidx.appcompat.widget.Toolbar
+          android:id="@+id/my_toolbar"
+          android:layout_width="match_parent"
+          android:layout_height="?attr/actionBarSize"
+          android:layout_alignParentTop="true"
+          />
+
+      <ImageView
+          android:id="@+id/back_button"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentStart="true"
+          android:layout_centerVertical="true"
+          android:layout_marginBottom="@dimen/margin_m"
+          android:layout_marginEnd="@dimen/margin_m"
+          android:layout_marginStart="@dimen/margin_m"
+          android:layout_marginTop="@dimen/margin_m"
+          android:background="?attr/selectableItemBackground"
+          android:padding="@dimen/margin_m"
+          android:src="@drawable/icn_back"
+          app:tint="@color/apple_black"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerInParent="true"
+          android:layout_toRightOf="@+id/back_button"
+          android:text="Create Farm"
+          android:textSize="@dimen/text_s"
+          android:textColor="@color/apple_black"
+          />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+      <ScrollView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_above="@+id/button_save_farm"
+          android:layout_alignParentTop="true"
+          >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_l"
+            android:orientation="vertical"
+            >
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_margin="@dimen/margin_l"
+              android:background="@drawable/button_rounded_rectangle_unfilled"
+              android:orientation="vertical"
+              android:padding="@dimen/margin_sm"
+              >
+            <TextView
+                android:id="@+id/my_farms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_sm"
+                android:text="Farm Name"
+                />
+
+            <EditText
+                android:id="@+id/farm_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_sm"
+                />
+
+          </LinearLayout>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_margin="@dimen/margin_l"
+              android:background="@drawable/button_rounded_rectangle_unfilled"
+              android:orientation="vertical"
+              android:padding="@dimen/margin_sm"
+              >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_sm"
+                android:text="Location"
+                />
+
+            <Spinner
+                android:id="@+id/district"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_margin="@dimen/margin_sm"
+                />
+
+            <Spinner
+                android:id="@+id/subcounty"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_margin="@dimen/margin_sm"
+                />
+
+
+            <Spinner
+                android:id="@+id/parish"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_margin="@dimen/margin_sm"
+                />
+
+            <Spinner
+                android:id="@+id/village"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_margin="@dimen/margin_sm"
+                />
+
+          </LinearLayout>
+
+        </LinearLayout>
+
+      </ScrollView>
+
+
+      <Button
+          android:id="@+id/button_save_farm"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_alignParentBottom="true"
+          android:layout_marginBottom="@dimen/margin_l"
+          android:layout_marginEnd="@dimen/margin_l"
+          android:layout_marginStart="@dimen/margin_l"
+          android:background="@drawable/button_rounded_rectangle"
+          android:text="Save Farm"
+          android:textAllCaps="false"
+          android:textColor="@color/white"
+          android:textSize="@dimen/text_m"
+          />
+
+    </RelativeLayout>
+
+  </LinearLayout>
+</layout>

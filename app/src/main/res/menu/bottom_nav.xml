@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item
+      android:id="@+id/farmDetailsFragment"
+      android:icon="@drawable/icn_summary"
+      android:title="Summary" />
+
+  <item
+      android:id="@+id/graphFragment"
+      android:icon="@drawable/icn_graph"
+      android:title="Graphs" />
+
+  <item
+      android:id="@+id/fieldViewFragment"
+      android:icon="@drawable/icn_field"
+      android:title="Field view" />
+
+  <item
+      android:id="@+id/settingsFragment"
+      android:icon="@drawable/icn_settings"
+      android:title="Settings" />
+
+</menu>

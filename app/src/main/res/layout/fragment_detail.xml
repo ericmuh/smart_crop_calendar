@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="fragment.DetailFragment"
+    >
+
+  <data>
+    <import type="android.view.View" />
+    <variable
+        name="viewModel"
+        type="com.bebridge.android_template.viewModel.DetailViewModel"
+        />
+  </data>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      >
+
+    <RelativeLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        >
+
+      <androidx.appcompat.widget.Toolbar
+          android:id="@+id/my_toolbar"
+          android:layout_width="match_parent"
+          android:layout_height="?attr/actionBarSize"
+          android:layout_alignParentTop="true"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerInParent="true"
+          android:text="DETAIL"
+          android:textSize="@dimen/text_s"
+          android:textStyle="bold"
+          />
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+        >
+      <androidx.viewpager2.widget.ViewPager2
+          android:id="@+id/image_pager"
+          android:layout_width="0dp"
+          android:layout_height="0dp"
+          android:background="@color/white"
+          android:orientation="horizontal"
+          app:product="@{viewModel.product}"
+          app:layout_constraintDimensionRatio="H,3:2"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"/>
+
+      <me.relex.circleindicator.CircleIndicator3
+          android:id="@+id/indicator"
+          android:layout_width="match_parent"
+          android:layout_height="12dp"
+          android:layout_marginBottom="24dp"
+          app:ci_drawable="@drawable/circle_indicator"
+          app:layout_constraintBottom_toBottomOf="parent"
+          />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{viewModel.product.toString}"
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <Button
+          android:id="@+id/home_button"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_alignParentBottom="true"
+          android:text="HOME BUTTON"
+          />
+    </RelativeLayout>
+
+  </LinearLayout>
+
+</layout>

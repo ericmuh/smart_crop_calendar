@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+  <action
+      android:id="@+id/action_global_homeFragment"
+      app:destination="@+id/homeFragment"
+      app:popUpTo="@id/homeFragment"
+      app:popUpToInclusive="true"
+      app:enterAnim="@anim/fragment_close_enter" />
+
+  <fragment
+      android:id="@+id/homeFragment"
+      android:name="com.bebridge.android_template.fragment.HomeFragment"
+      android:label="HomeFragment"
+      tools:layout="@layout/fragment_home">
+    <action
+        android:id="@+id/action_homeFragment_to_onBoardingFragment"
+        app:destination="@id/onBoardingFragment"
+        app:popUpTo="@id/nav_graph"
+        app:popUpToInclusive="true" />
+    <action
+        android:id="@+id/action_homeFragment_to_signUpFragment"
+        app:destination="@id/signUpFragment" />
+    <action
+        android:id="@+id/action_homeFragment_to_addFarmFragment"
+        app:destination="@id/addFarmFragment" />
+    <action
+        android:id="@+id/action_homeFragment_to_farmDetailsFragment"
+        app:destination="@id/farmDetailsFragment" />
+    <action
+        android:id="@+id/action_homeFragment_to_notificationFragment"
+        app:destination="@id/notificationFragment" />
+  </fragment>
+  <fragment
+      android:id="@+id/onBoardingFragment"
+      android:name="com.bebridge.android_template.fragment.OnBoardingFragment"
+      android:label="OnBoardingFragment"
+      tools:layout="@layout/fragment_on_boarding">
+
+    <action
+        android:id="@+id/action_onBoardingFragment_to_loginFragment"
+        app:destination="@id/loginFragment" />
+  </fragment>
+  <fragment
+      android:id="@+id/loginFragment"
+      android:name="com.bebridge.android_template.fragment.LoginFragment"
+      android:label="LoginFragment"
+      tools:layout="@layout/fragment_login">
+    <argument
+        android:name="hideLoginSkip"
+        android:defaultValue="false"
+        app:argType="boolean" />
+    <action
+        android:id="@+id/action_loginFragment_to_resetPasswordFragment"
+        app:destination="@id/confirmNumberFragment" />
+  </fragment>
+
+  <fragment
+      android:id="@+id/signUpFragment"
+      android:name="com.bebridge.android_template.fragment.SignUpFragment"
+      android:label="fragment_sign_up"
+      tools:layout="@layout/fragment_sign_up">
+    <action
+        android:id="@+id/action_signUpFragment_to_homeFragment"
+        app:destination="@id/homeFragment"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="true"
+        app:enterAnim="@anim/fragment_open_enter" />
+  </fragment>
+
+  <fragment
+      android:id="@+id/confirmNumberFragment"
+      android:name="com.bebridge.android_template.fragment.ConfirmNumberFragment"
+      android:label="fragment_confirm_number"
+      tools:layout="@layout/fragment_confirm_number">
+    <action
+        android:id="@+id/action_confirmNumberFragment_to_homeFragment"
+        app:destination="@id/homeFragment"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="false"
+        app:launchSingleTop="false" />
+
+  </fragment>
+
+  <fragment
+      android:id="@+id/addFarmFragment"
+      android:name="com.bebridge.android_template.fragment.AddFarmFragment"
+      android:label="AddFarmFragment"
+      tools:layout="@layout/fragment_add_farm" />
+  <fragment
+      android:id="@+id/farmDetailsFragment"
+      android:name="com.bebridge.android_template.fragment.FarmDetailsFragment"
+      android:label="FarmDetailsFragment"
+      tools:layout="@layout/fragment_farm_details">
+
+    <argument
+        android:name="farmId"
+        android:defaultValue="0L"
+        app:argType="long" />
+  </fragment>
+  <fragment
+      android:id="@+id/notificationFragment"
+      android:name="com.bebridge.android_template.fragment.NotificationFragment"
+      android:label="NotificationFragment"
+      tools:layout="@layout/fragment_notification" />
+  <fragment
+      android:id="@+id/graphFragment"
+      android:name="com.bebridge.android_template.fragment.GraphFragment"
+      android:label="GraphFragment" />
+  <fragment
+      android:id="@+id/summaryFragment"
+      android:name="com.bebridge.android_template.fragment.SummaryFragment"
+      android:label="SummaryFragment" />
+  <fragment
+      android:id="@+id/fieldViewFragment"
+      android:name="com.bebridge.android_template.fragment.FieldViewFragment"
+      android:label="FieldViewFragment" />
+  <fragment
+      android:id="@+id/settingsFragment"
+      android:name="com.bebridge.android_template.fragment.SettingsFragment"
+      android:label="fragment_settings"
+      tools:layout="@layout/fragment_settings" />
+
+</navigation>

@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="fragment.HomeFragment"
+    >
+
+  <data>
+    <import type="android.view.View" />
+    <variable
+        name="viewModel"
+        type="com.bebridge.android_template.viewModel.HomeViewModel"
+        />
+  </data>
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      >
+
+    <RelativeLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        >
+
+      <androidx.appcompat.widget.Toolbar
+          android:id="@+id/my_toolbar"
+          android:layout_width="match_parent"
+          android:layout_height="?attr/actionBarSize"
+          android:layout_alignParentTop="true"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_marginStart="@dimen/margin_l"
+          android:text="Overview"
+          android:textAllCaps="true"
+          android:textColor="@color/apple_black"
+          android:textSize="@dimen/text_l"
+          android:textStyle="bold"
+          />
+
+
+      <FrameLayout
+          android:id="@+id/open_notification"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_toStartOf="@+id/open_menu"
+          android:clipToPadding="false"
+          android:focusable="true"
+          android:padding="@dimen/margin_l"
+          app:tint="?attr/colorControlNormal"
+          style="?attr/actionButtonStyle"
+          >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/icn_notification"
+            app:tint="@color/apple_black"
+            />
+
+        <TextView
+            android:id="@+id/cart_badge"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="right|end|top"
+            android:layout_marginEnd="-10dp"
+            android:layout_marginTop="-5dp"
+            android:background="@drawable/badge_background"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="0"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_sss"
+            />
+
+        <!--<TextView
+            android:id="@+id/cart_badge"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:layout_gravity="right|end|top"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/badge_background"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_sss"
+            />-->
+
+      </FrameLayout>
+
+      <ImageView
+          android:id="@+id/add_farm"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_gravity="center"
+          android:layout_toStartOf="@+id/open_notification"
+          android:background="?attr/selectableItemBackground"
+          android:padding="16dp"
+          android:src="@drawable/icn_add"
+          app:tint="@color/apple_black"
+          />
+
+      <ImageView
+          android:id="@+id/open_menu"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentEnd="true"
+          android:layout_centerVertical="true"
+          android:layout_gravity="center"
+          android:background="?attr/selectableItemBackground"
+          android:padding="16dp"
+          android:src="@drawable/icn_person_info"
+          app:tint="@color/apple_black"
+          />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/toolbar_layout"
+        android:background="?android:attr/listDivider"
+        />
+
+    <ScrollView
+        android:id="@+id/home_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/divider"
+        android:layout_above="@id/bottom_layout"
+        >
+
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/divider"
+          >
+
+        <RelativeLayout
+            android:id="@+id/soil_moisture_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_s"
+            android:background="@color/white"
+            >
+
+          <TextView
+              android:id="@+id/soil_moisture_title"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginEnd="@dimen/margin_l"
+              android:layout_marginStart="@dimen/margin_l"
+              android:layout_marginTop="@dimen/margin_l"
+              android:text="Soil Moisture Status"
+              android:textAllCaps="true"
+              android:textColor="@color/apple_black"
+              android:textStyle="bold"
+              />
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_below="@id/soil_moisture_title"
+              android:layout_margin="@dimen/margin_l"
+              android:orientation="horizontal"
+              >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/google_red"
+                >
+
+              <TextView
+                  android:id="@+id/refill_"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_centerInParent="true"
+                  android:src="@drawable/icn_notification"
+                  android:text="0"
+                  android:textColor="@color/white"
+                  android:textSize="@dimen/text_ll"
+                  android:textStyle="bold"
+                  />
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@+id/refill_"
+                  android:layout_centerInParent="true"
+                  android:src="@drawable/icn_notification"
+                  android:text="Farms"
+                  android:textColor="@color/white"
+                  />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1dp"
+                android:layout_marginStart="1dp"
+                android:layout_weight="1"
+                android:background="@color/colorAccent"
+                >
+
+              <TextView
+                  android:id="@+id/optimal_"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_centerInParent="true"
+                  android:src="@drawable/icn_notification"
+                  android:text="0"
+                  android:textColor="@color/white"
+                  android:textSize="@dimen/text_ll"
+                  android:textStyle="bold"
+                  />
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@+id/optimal_"
+                  android:layout_centerInParent="true"
+                  android:src="@drawable/icn_notification"
+                  android:text="Farms"
+                  android:textColor="@color/white"
+                  />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:padding="@dimen/margin_m"
+                >
+
+              <TextView
+                  android:id="@+id/full_fields"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_centerInParent="true"
+                  android:src="@drawable/icn_notification"
+                  android:text="0"
+                  android:textColor="@color/white"
+                  android:textSize="@dimen/text_ll"
+                  android:textStyle="bold"
+                  />
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@+id/full_fields"
+                  android:layout_centerInParent="true"
+                  android:layout_marginBottom="@dimen/margin_ll"
+                  android:src="@drawable/icn_notification"
+                  android:text="Farms"
+                  android:textColor="@color/white"
+                  />
+
+            </RelativeLayout>
+
+          </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/all_sensors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/soil_moisture_status"
+            android:layout_marginBottom="@dimen/margin_sm"
+            android:background="@color/white"
+            >
+
+          <TextView
+              android:id="@+id/sensors"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="@dimen/margin_l"
+              android:layout_marginEnd="@dimen/margin_l"
+              android:layout_marginStart="@dimen/margin_l"
+              android:layout_marginTop="@dimen/margin_l"
+              android:text="All Sensors"
+              android:textColor="@color/apple_black"
+              android:textStyle="bold"
+              />
+
+          <TextView
+              android:id="@+id/all_sensors_tag"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/sensors"
+              android:layout_centerInParent="true"
+              android:layout_marginBottom="@dimen/margin_l"
+              android:layout_marginEnd="@dimen/margin_l"
+              android:layout_marginStart="@dimen/margin_l"
+              android:text="There are no sensors installed at your farm"
+              android:textAlignment="center"
+              />
+
+          <Button
+              android:id="@+id/button_install_sensor"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/all_sensors_tag"
+              android:layout_centerInParent="true"
+              android:layout_marginBottom="@dimen/margin_m"
+              android:background="@drawable/install_sensor_badge"
+              android:paddingEnd="@dimen/margin_lll"
+              android:paddingStart="@dimen/margin_lll"
+              android:text="Install Sensors"
+              android:textAllCaps="false"
+              android:textColor="@color/white"
+              android:textSize="@dimen/text_s"
+              />
+
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/button_install_sensor"
+              android:layout_centerInParent="true"
+              android:layout_marginBottom="@dimen/margin_l"
+              android:layout_marginEnd="@dimen/margin_l"
+              android:layout_marginStart="@dimen/margin_l"
+              android:text="Contact Our Team"
+              android:textAlignment="center"
+              android:textColor="@color/colorAccent"
+              android:textSize="@dimen/text_m"
+              />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/recommendation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/all_sensors"
+            android:layout_marginBottom="@dimen/margin_sm"
+            android:background="@color/white"
+            >
+
+          <ImageView
+              android:id="@+id/recommendation_title"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerVertical="true"
+              android:layout_marginTop="@dimen/margin_l"
+              android:background="@drawable/recommendation_badge"
+              android:padding="@dimen/margin_sm"
+              android:src="@drawable/icn_recommend"
+              android:textColor="@color/apple_black"
+              android:textStyle="bold"
+              />
+
+          <RelativeLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_toLeftOf="@+id/read_more"
+              android:layout_toRightOf="@+id/recommendation_title"
+              android:textAlignment="center"
+              android:textColor="@color/line_green"
+              android:textSize="@dimen/text_m"
+              >
+            <TextView
+                android:id="@+id/recommendation_notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/margin_ss"
+                android:layout_marginEnd="@dimen/margin_l"
+                android:layout_marginLeft="@dimen/margin_l"
+                android:layout_marginRight="@dimen/margin_l"
+                android:layout_marginStart="@dimen/margin_l"
+                android:layout_marginTop="@dimen/margin_l"
+                android:text="New Season: Should Start in March"
+                android:textAlignment="center"
+                android:textColor="@color/line_green"
+                android:textSize="@dimen/text_m"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/recommendation_notification"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/margin_l"
+                android:layout_marginLeft="@dimen/margin_l"
+                android:layout_marginRight="@dimen/margin_l"
+                android:layout_marginTop="@dimen/margin_s"
+                android:text="[Maize, Cassava , Sweet Potatoes] - Brian's Crop Farm"
+                android:textAlignment="center"
+                android:textColor="@color/line_green"
+                android:textSize="@dimen/text_ss"
+                />
+
+          </RelativeLayout>
+
+          <ImageView
+              android:id="@+id/read_more"
+              android:layout_width="25dp"
+              android:layout_height="25dp"
+              android:layout_alignParentEnd="true"
+              android:layout_marginTop="@dimen/margin_l"
+              android:padding="@dimen/margin_sm"
+              android:rotation="180"
+              android:src="@drawable/icon_chevron_left_light"
+              app:tint="@color/line_green"
+              />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/find_a_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recommendation"
+            android:background="@color/white"
+            >
+
+          <RelativeLayout
+              android:id="@+id/find_label"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginEnd="@dimen/margin_l"
+              android:layout_marginStart="@dimen/margin_l"
+              >
+
+            <ImageView
+                android:id="@+id/farm_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/margin_m"
+                android:src="@drawable/icn_farm"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="@dimen/margin_sm"
+                android:layout_marginEnd="@dimen/margin_l"
+                android:layout_marginTop="@dimen/margin_l"
+                android:layout_toRightOf="@+id/farm_icon"
+                android:text="My Farms"
+                android:textColor="@color/apple_black"
+                android:textStyle="bold"
+                />
+          </RelativeLayout>
+
+
+          <androidx.recyclerview.widget.RecyclerView
+              android:id="@+id/farms_recyclerview"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_below="@+id/find_label"
+              android:overScrollMode="never"
+              app:farm="@{viewModel.farms}"
+              />
+
+        </RelativeLayout>
+
+
+      </RelativeLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/divider"
+        android:layout_marginBottom="@dimen/margin_l"
+        android:layout_marginEnd="@dimen/margin_l"
+        android:layout_marginStart="@dimen/margin_l"
+        android:layout_marginTop="@dimen/margin_l"
+        android:visibility="gone"
+        >
+
+      <ImageView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_above="@+id/create_farm_statement"
+          android:layout_centerInParent="true"
+          android:layout_marginBottom="@dimen/margin_sm"
+          android:src="@drawable/saerd_logo"
+          android:textAlignment="center"
+          android:textSize="@dimen/text_s"
+          />
+
+      <TextView
+          android:id="@+id/create_farm_statement"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_above="@+id/button_add_farm"
+          android:layout_centerInParent="true"
+          android:text="Let us start by creating farm, we shall guide you through the entire process."
+          android:textAlignment="center"
+          android:textSize="@dimen/text_s"
+          />
+
+      <Button
+          android:id="@+id/button_add_farm"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerInParent="true"
+          android:text="Create Farm"
+          />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/margin_l"
+        android:layout_marginTop="@dimen/margin_m"
+        android:layout_marginEnd="@dimen/margin_l"
+        android:background="@color/white"
+        android:layout_marginBottom="@dimen/margin_l">
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerInParent="true"
+          android:layout_marginBottom="@dimen/margin_l"
+          android:layout_marginEnd="@dimen/margin_l"
+          android:layout_marginStart="@dimen/margin_l"
+          android:text="@string/please_contact_us"
+          android:textColor="@color/colorAccent"
+          android:textSize="@dimen/text_m"
+          />
+
+
+    </RelativeLayout>
+
+  </RelativeLayout>
+</layout>
