@@ -56,7 +56,7 @@
   <!--onBoarding fragment -->
   <string name="slide_skip"><u>スキップ</u></string>
   <string name="finish">はじめる</string>
-  <string name="on_boarding_measure_title">PERSONAL ACCOUNT</string>
+  <string name="on_boarding_measure_title">Hey, What would you like to learn today</string>
   <string name="on_boarding_measure_description">Create Account &amp; Login </string>
   <string name="on_boarding_record_title">DATA ANALYSIS</string>
   <string name="on_boarding_record_description">Collect information about your firms</string>
