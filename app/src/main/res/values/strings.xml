@@ -24,7 +24,7 @@
   <string name="login_with_facebook">Facebookでログイン</string>
   <string name="login_with_line">LINEでログイン</string>
   <string name="login_with_apple">Appleでログイン</string>
-  <string name="login">LOGIN HERE</string>
+  <string name="login">Login Here</string>
   <string name="email_login_password">パスワード</string>
   <string name="email_login_forget_password"><u>パスワードお忘れ？</u></string>
   <string name="email_login_email">メールアドレス</string>
@@ -54,13 +54,11 @@
   <string name="gender_other">Others</string>
 
   <!--onBoarding fragment -->
-  <string name="slide_skip"><u>スキップ</u></string>
-  <string name="finish">はじめる</string>
-  <string name="on_boarding_measure_title">Hey, What would you like to learn today</string>
+  <string name="on_boarding_measure_title">Hey, what would you like to plant next season</string>
   <string name="on_boarding_measure_description">Create Account &amp; Login </string>
-  <string name="on_boarding_record_title">DATA ANALYSIS</string>
+  <string name="on_boarding_record_title">Would you like to know about what and when to plant</string>
   <string name="on_boarding_record_description">Collect information about your firms</string>
-  <string name="on_boarding_manage_title">REMOTE MANAGEMENT</string>
+  <string name="on_boarding_manage_title">The smart crop calendar app will help you learn more.</string>
   <string name="on_boarding_manage_description">Control and Manage Irrigation from anywhere</string>
 
   <!-- menu fragment-->
@@ -110,8 +108,6 @@
   <string name="edit_profile_update_photo">プロフィール写真を変更</string>
   <string name="edit_profile_save">保存</string>
   <string name="edit_profile_successful">更新しました</string>
-  <!-- TODO: Remove or change this placeholder text -->
-  <string name="hello_blank_fragment">Hello blank fragment</string>
   <string name="please_contact_us"><u>Please contact an expert for more help.</u></string>
 
 </resources>

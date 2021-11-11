@@ -24,9 +24,9 @@
         android:layout_marginTop="30dp"
         android:layout_weight="40"
         android:fontFamily="@font/bariol_bold"
-        android:text="Hey, What would you like to learn today ?"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="30sp"
+        android:text="Hey, what would you like to learn today ?"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_ll"
         />
 
     <ImageView
@@ -101,7 +101,7 @@
               <ImageView
                   android:id="@+id/image"
                   android:layout_width="match_parent"
-                  android:layout_height="320dp"
+                  android:layout_height="300dp"
                   android:scaleType="centerCrop"
                   android:src="@drawable/slide_one"
                   />
@@ -110,14 +110,10 @@
                   android:id="@+id/slide_description"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
-                  android:layout_gravity="center_vertical"
                   android:fontFamily="@font/bariol_regular"
-                  android:gravity="center_vertical"
-                  android:paddingBottom="10dp"
-                  android:paddingLeft="20dp"
-                  android:paddingRight="20dp"
-                  android:paddingTop="10dp"
+                  android:padding="10dp"
                   android:text="Description"
+                  android:textAlignment="center"
                   android:textColor="#000000"
                   android:textSize="@dimen/text_l"
                   />
