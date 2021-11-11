@@ -13,7 +13,7 @@ import com.bebridge.android_template.db.model.SlideModel
 import com.bebridge.android_template.util.PreferenceController
 import com.bebridge.android_template.util.SlidingImageAdapter
 import com.viewpagerindicator.CirclePageIndicator
-import java.util.*
+import java.util.ArrayList
 
 class OnBoardingFragment : Fragment() {
 
@@ -46,9 +46,9 @@ class OnBoardingFragment : Fragment() {
   private fun populateSlideModelList(): ArrayList<SlideModel> {
 
     val myImageList = intArrayOf(
-      R.drawable.tutorial1,
-      R.drawable.tutorial2,
-      R.drawable.tutorial3
+      R.drawable.slide_one,
+      R.drawable.slide_two,
+      R.drawable.slide_three
     )
 
     val slideTitleList = arrayOf(

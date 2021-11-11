@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffba60"
+    android:background="@color/colorPrimary"
     android:orientation="vertical"
     >
 
@@ -39,25 +39,6 @@
     </ImageView>
   </LinearLayout>
 
-  <TextView
-      android:id="@+id/slide_description"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center_vertical"
-      android:layout_marginLeft="@dimen/margin_ll"
-      android:layout_marginRight="@dimen/margin_ll"
-      android:layout_marginTop="20dp"
-      android:drawablePadding="32dp"
-      android:fontFamily="@font/bariol_regular"
-      android:gravity="center_vertical"
-      android:paddingBottom="10dp"
-      android:paddingLeft="20dp"
-      android:paddingRight="20dp"
-      android:paddingTop="10dp"
-      android:text="Description"
-      android:textColor="#000000"
-      android:textSize="14sp"
-      />
 
   <LinearLayout
       android:layout_width="match_parent"
@@ -103,12 +84,9 @@
           <androidx.cardview.widget.CardView
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-
-
               android:layout_weight="1"
               android:clickable="true"
               android:focusable="true"
-              android:foreground="?attr/selectableItemBackground"
               app:cardCornerRadius="14dp"
               app:cardElevation="0dp"
               app:cardPreventCornerOverlap="false"
@@ -125,7 +103,23 @@
                   android:layout_width="match_parent"
                   android:layout_height="320dp"
                   android:scaleType="centerCrop"
-                  android:src="@drawable/course_design_coding"
+                  android:src="@drawable/slide_one"
+                  />
+
+              <TextView
+                  android:id="@+id/slide_description"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center_vertical"
+                  android:fontFamily="@font/bariol_regular"
+                  android:gravity="center_vertical"
+                  android:paddingBottom="10dp"
+                  android:paddingLeft="20dp"
+                  android:paddingRight="20dp"
+                  android:paddingTop="10dp"
+                  android:text="Description"
+                  android:textColor="#000000"
+                  android:textSize="@dimen/text_l"
                   />
 
 
